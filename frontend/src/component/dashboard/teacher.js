@@ -6,9 +6,9 @@ import Sidebar from '../Miscellenous/SideBar';
 
 const Teacher = () => {
   const location = useLocation();
-  const myProps = location.state;
+  // const myProps = location.state;
 
-  console.log(myProps.prop1);
+  // console.log(myProps.prop1);
   return (
     <Sidebar/>
 
