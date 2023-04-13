@@ -23,7 +23,7 @@ function Attendance() {
   const toast=useToast();
   useEffect(() => {
     if (Class) {
-      axios.get(`http://localhost:3000/api/user/students?Class=${Class}`)
+      axios.get(`http://localhost:5000/api/user/students?Class=${Class}`)
         .then((response) => {
           setStudents(response.data);
           
