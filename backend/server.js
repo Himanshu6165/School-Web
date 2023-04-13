@@ -9,12 +9,17 @@ const timetableRouter=require("./Routes/timetable")
 app.use(express.json());
 app.use(bodyParser.json());
 
+const path = __dirname + '/views/';
+app.use(express.static(path));
+
+
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 connectDB();
 
 app.get('/', (req, res) => {
-    res.send("App is listening");
+    res.sendFile(path + "index.html")
+    // res.send("App is listening");
 })
 
 app.use("/api/user", userRouter)
@@ -31,3 +36,4 @@ app.get('/api/currentUser', (req, res) => {
 
 
 app.listen(5000, console.log(`Server started on PORT ${PORT}`));
+
